@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NCN | Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div id="login-view" class="view-container">
+        <div class="auth-wrapper">
+            <div class="login-card">
+                <div class="logo-area">
+                    <img src="https://via.placeholder.com/150" alt="University Crest">
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label>Reg. Number</label>
+                        <input type="text" id="reg-input" placeholder="Reg. Number" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="pass-box">
+                            <input type="password" id="password" placeholder="Password" required>
+                            <i class='bx bx-show'></i>
+                        </div>
+                    </div>
+                    <div class="check-box-row">
+                        <input type="checkbox" id="rem"> <label for="rem">Remember me</label>
+                    </div>
+                    <button type="submit" class="login-btn">Log In</button>
+                    <div class="forgot-txt"><a href="#">Forgot your password?</a></div>
+                </form>
+                <div class="login-footer-red">2026 © Designed by DSL Systems</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portal-view" class="view-container hidden">
+        <header class="top-header">
+            <button id="menu-toggle"><i class='bx bx-menu'></i></button>
+            <div class="header-right">
+                <img src="https://via.placeholder.com/45" class="user-pfp">
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar" id="sidebar">
+                <nav class="side-nav">
+                    <p class="nav-heading">DASHBOARD</p>
+                    <button class="nav-item active" onclick="navTo('home')"><i class='bx bxs-user'></i> Personal Profile</button>
+                    
+                    <p class="nav-heading">ACADEMICS</p>
+                    <button class="nav-item"><i class='bx bxs-spreadsheet'></i> Registration <i class='bx bx-chevron-down' style="margin-left:auto"></i></button>
+                    <button class="nav-item"><i class='bx bx-transfer-alt'></i> Academic Requisition</button>
+                    <button class="nav-item"><i class='bx bxs-movie-play'></i> Course Evaluation</button>
+                    <button class="nav-item"><i class='bx bxs-lock-open'></i> Clearance Request</button>
+                    <button class="nav-item"><i class='bx bxs-registered'></i> Student Entry Survey</button>
+
+                    <p class="nav-heading">FINANCIALS</p>
+                    <button class="nav-item"><i class='bx bxs-bank'></i> Fee Structure</button>
+                    <button class="nav-item"><i class='bx bxs-spreadsheet'></i> Household Statement</button>
+                    <button class="nav-item"><i class='bx bxs-spreadsheet'></i> Accomodation Statement</button>
+                    <button class="nav-item"><i class='bx bxs-folder-open'></i> Receipts</button>
+
+                    <p class="nav-heading">ACCOMMODATION</p>
+                    <button class="nav-item"><i class='bx bxs-bed'></i> Hostel Booking</button>
+
+                    <p class="nav-heading">EXAMINATION</p>
+                    <button class="nav-item"><i class='bx bxs-cloud-download'></i> Transcript</button>
+
+                    <p class="nav-heading">CLUBS AND SOCIETIES</p>
+                    <button class="nav-item"><i class='bx bxs-download'></i> My Clubs and Societies</button>
+                    <button class="nav-item"><i class='bx bxs-cloud-upload'></i> Club Requisitions</button>
+
+                    <p class="nav-heading">GUIDANCE & COUNSELLING</p>
+                    <button class="nav-item"><i class='bx bxs-user-rectangle'></i> Book Session</button>
+                    <button class="nav-item"><i class='bx bxs-file-blank'></i> Read Counsellor Articles</button>
+
+                    <p class="nav-heading">SETTINGS</p>
+                    <button class="nav-item"><i class='bx bxs-cog'></i> Change Password</button>
+                    <button class="nav-item logout-red" id="logout-btn"><i class='bx bx-log-out'></i> Logout</button>
+                </nav>
+            </aside>
+
+            <main id="home-page" class="content-area">
+                <div class="banner"><h2>Dashboard</h2></div>
+                <div class="card">
+                    <div class="card-header">Basic information</div>
+                    <div class="card-body center">
+                        <div class="pfp-container"><img src="https://via.placeholder.com/130"></div>
+                        <div class="data-row"><label>Reg. No</label><p id="p-reg" class="bold gold"></p></div>
+                        <div class="data-row"><label>Name</label><p id="p-name" class="bold gold"></p></div>
+                        <div class="data-row"><label>ID No</label><p class="bold"></p></div>
+                        <div class="data-row"><label>Gender</label><p class="bold"></p></div>
+                        <div class="data-row"><label>Address</label><p class="bold"></p></div>
+                        <div class="data-row"><label>Email</label><p class="bold gold"></p></div>
+                        <div class="data-row"><label>Date Of Birth</label><p class="bold gold"></p></div>
+                        <div class="data-row"><label>Campus</label><p class="bold gold">100</p></div>
+                        <button class="btn-teal">Get Academic Calendar</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Academic Information</div>
+                    <div class="card-body">
+                        <div class="data-row"><label>Current Programme</label><p class="bold gold"></p></div>
+                        <div class="data-row"><label>Attempted Units</label><p class="bold gold"></p></div>
+                        <div class="data-row"><label>Registered Units</label><p class="bold gold"></p></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Fee Payment</div>
+                    <div class="card-body">
+                        <div class="data-row"><label>Fee Balance</label><p class="bold gold"></p></div>
+                        <div class="data-row"><label>Household Amount</label><p class="bold gold"></p></div>
+                        <button class="btn-teal" id="pay-btn">Make Payment</button>
+                    </div>
+                </div>
+
+                <footer class="footer-txt">2026 © Designed by <span class="blue">DSL Systems</span></footer>
+            </main>
+
+            <main id="payment-page" class="content-area hidden">
+                <div class="banner"><button class="back-btn" onclick="navTo('home')"><i class='bx bx-arrow-back'></i></button><h2>Payment Gateway</h2></div>
+                <div class="gateway-list">
+                    <div class="gate-item">Accommodation Booking <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Academic Requisition <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Course Registration <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Field Work/Attachment <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Graduation Application <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Hostel Caution Money <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Household Payment <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Identity Card <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Late Registration <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Medical Examination <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Off-Campus Accommodation <i class='bx bx-chevron-right'></i></div>
+                    <div class="gate-item">Resit/Special Examination <i class='bx bx-chevron-right'></i></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
